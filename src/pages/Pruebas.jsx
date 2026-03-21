@@ -67,7 +67,7 @@ const Pruebas = () => {
             </div>
             <button
                 onClick={() => { setEditarPrueba(null); setMostrarModal(true); }}
-                className="flex items-center gap-2 bg-violet-600 text-white px-4 py-2.5 rounded-xl hover:bg-violet-700 transition-colors cursor-pointer shadow-sm font-medium"
+                className="flex items-center gap-2 bg-violet-600 text-white px-4 py-2.5 rounded-xl hover:bg-violet-700 transition-colors cursor-pointer shadow-sm font-medium whitespace-nowrap shrink-0"
             >
                 <HiPlus className="text-lg" />
                 Agregar Prueba
