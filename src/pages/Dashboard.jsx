@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { HiCalendar } from 'react-icons/hi'
+import { useNavigate } from 'react-router-dom'
 import api from '../api/axios'
 import EventCard from '../components/EventCard'
 
@@ -15,6 +16,7 @@ const Dashboard = () => {
     const [eventos, setEventos] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
+    const navigate = useNavigate()
 
     useEffect(() => {
         api.get('/eventos')
@@ -50,10 +52,19 @@ const Dashboard = () => {
             </div>
 
             <div className='mt-8'>
-                <h2 className='text-xl font-semibold text-gray-700 flex items-center gap-2'>
-                    <HiCalendar />
-                    Próximos 14 días
-                </h2>
+                <div className='flex items-center justify-between'>
+                    <h2 className='text-xl font-semibold text-gray-700 flex items-center gap-2'>
+                        <HiCalendar />
+                        Próximos 14 días
+                    </h2>
+                    <button
+                        onClick={() => navigate('/calendario')}
+                        className="p-2.5 bg-violet-100 text-violet-600 rounded-xl hover:bg-violet-200 transition-colors cursor-pointer"
+                        title="Calendario de Estudio"
+                    >
+                        <HiCalendar className="text-xl" />
+                    </button>
+                </div>
             </div>
 
             {loading && (

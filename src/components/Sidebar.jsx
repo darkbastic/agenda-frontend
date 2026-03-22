@@ -1,5 +1,5 @@
 import { FaMapMarkedAlt } from "react-icons/fa"
-import { HiHome } from "react-icons/hi"
+import { HiHome, HiCalendar } from "react-icons/hi"
 import { HiClipboardDocumentList, HiDocumentText } from "react-icons/hi2"
 import { NavLink } from "react-router-dom"
 
@@ -11,17 +11,16 @@ const Sidebar = () => {
         { to: '/controles', label: 'Controles', icon: <HiClipboardDocumentList /> },
         { to: '/pruebas', label: 'Pruebas', icon: <HiDocumentText /> },
         { to: '/terrenos', label: 'Terrenos', icon: <FaMapMarkedAlt /> },
+        { to: '/calendario', label: 'Calendario', icon: <HiCalendar /> },
     ]
     return (
         <aside className="hidden md:flex w-64 min-h-screen bg-white border-r border-gray-200 flex-col p-6">
-            {/* Logo */}
             <div className="mb-10">
                 <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">
                     UniAgenda
                 </h1>
                 <p className="text-sm text-gray-400">Gestión Académica</p>
             </div>
-            {/* Navegación */}
             <nav className="flex flex-col gap-2 flex-1">
                 {menuItems.map((item) => (
                     <NavLink
